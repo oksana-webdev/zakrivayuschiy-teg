@@ -23,7 +23,7 @@
   padding-block-start: 102px;
   
   font-family: var(--main-font);
-  font-weight: var(--normal-wdth, 400);
+  font-weight: 400;
   line-height: normal;
   color: var(--accent-color, #000);
 
