@@ -6,25 +6,31 @@
 */
 
 
-:root.theme-light {
+.page.theme-light {
   --normal-wdth: 400;
   --bold-wdth: 700;
 
   --bg-color:  #FFF;  
   --accent-color: #000;
 
-  --bg-image: url(../svg/pattern-light.svg)
+  --bg-image: url(../svg/pattern-light.svg);
+
+  --heart-fill: #FF0000;
+  --heart-contour: #000;
 }
 
 
-:root.theme-dark {
+.page.theme-dark {
   --normal-wdth: 465;
   --bold-wdth: 785;
 
   --bg-color: #000;
   --accent-color: #00CC14;
 
-  --bg-image: url(../svg/pattern-dark.svg)
+  --bg-image: url(../svg/pattern-dark.svg);
+
+  --heart-fill: #FF0000;
+  --heart-contour: #00CC14;
 }
 
 
@@ -36,6 +42,9 @@
     --bg-color: #000;
     --accent-color: #00CC14;
     
-    --bg-image: url(../svg/pattern-dark.svg)
+    --bg-image: url(../svg/pattern-dark.svg);
+
+    --heart-fill: #FF0000;
+    --heart-contour: #00CC14;
   }  
 }

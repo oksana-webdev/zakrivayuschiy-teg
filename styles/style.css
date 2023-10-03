@@ -19,8 +19,7 @@
   min-block-size: 100dvb;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  /* margin: 0 auto; */
+  align-items: center; 
   padding-block-start: 102px;
   
   font-family: var(--main-font);
@@ -37,7 +36,7 @@
 
 .section {
   min-inline-size: 316px;
-  inline-size: min(98dvi, 696px);
+  inline-size: min(98.5dvi, 696px);
 
   outline: 2px solid var(--accent-color);
   background-color: var(--bg-color);
@@ -70,13 +69,13 @@
 }
 
 .theme-menu {
-  padding: 25px 0;
+  padding: 25px 0 25px 15px;
 }
 
 .theme-menu__list {
   display: flex;
   flex-direction: column;
-  gap: 14px;  
+  gap: 12px;
 }
 
 .theme-menu__button {
@@ -160,7 +159,7 @@
 }
 
 .main__title {
-  padding: 0 12px;
+  padding: 5px 10px;
 
   font-size: inherit;
   font-weight: var(--bold-wdth);
@@ -169,7 +168,7 @@
 
 .main__picture {
   inline-size: 100%;
-  block-size: auto;
+  aspect-ratio: 1/1;  
 }
 
 .main__content {
@@ -185,11 +184,11 @@
   padding-block-start: 27px;
 }
 
-.content__buttons {
+.content__card {
   display: flex;
   justify-content: end;
-  padding-block-start: 25px;
-  gap: 12px;
+  padding-block-start: 28px;
+  gap: 9px;
 }
 
 .card__icon-button {
@@ -208,13 +207,52 @@
   transition: outline 0.3s ease;
 }
 
-.card__like-button {
+.button {
   position: relative;
 
-  inline-size: 130px;
-  block-size: 38px;
-
   outline: 2px solid var(--accent-color);
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  inline-size: 100%;
+  block-size: 100%;
+  inset-inline-start: 0;
+  inset-block-start: 0;
+
+  background-color: var(--accent-color);
+
+  scale: 0 1;
+}
+
+.button:hover::before {
+  scale: 1;
+  transform-origin: left;
+  transition: scale 0.5s ease-in-out;
+}
+
+.button:hover .button__text {
+  color: var(--bg-color);
+
+  transition: color 1s ease;
+}
+
+.button:hover .footer__icon {
+  color: var(--bg-color);
+
+  transition: color 1s ease;
+}
+
+.button:focus {
+  box-shadow: 3px 3px 0 currentColor;
+
+  transition: box-shadow 0.3s ease;
+}
+
+.card__like-button {
+  inline-size: 126px;
+  block-size: 34px;
 }
 
 .button__text {
@@ -229,12 +267,10 @@
 }
 
 .footer {
-  padding: 54px 0 102px;
+  padding: 51px 0 102px;
 }
 
-.card__save-button {
-  position: relative;
-
+.footer__save-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -244,55 +280,21 @@
   padding: 15px;
   min-inline-size: 306px;
   inline-size: min(80dvi, 335px);
-  
+    
   background-color: var(--bg-color);
-  outline: 2px solid var(--accent-color); 
-}
-
-.card__like-button::before,
-.card__save-button::before {
-  content: '';
-  position: absolute;
-  inline-size: 100%;
-  block-size: 100%;
-  inset-inline-start: 0;
-  inset-block-start: 0;
-
-  background-color: var(--accent-color);
-
-  scale: 0 1;
-}
-
-.card__like-button:hover::before,
-.card__save-button:hover::before {
-  scale: 1;
-  transform-origin: left;
-  transition: scale 0.5s ease-in-out;
-}
-
-.card__like-button:hover, .card__save-button:hover .button__text {
-  color: var(--bg-color);
-
-  transition: color 1s ease;
-}
-
-.card__save-button:hover .footer__icon {
-  color: var(--bg-color);
-
-  transition: color 1s ease;
-}
-
-.card__like-button:focus,
-.card__save-button:focus {
-  box-shadow: 3px 3px 0 currentColor;
-
-  transition: box-shadow 0.3s ease;
 }
 
 .footer__icon {
   position: relative;
   z-index: 1;
 
-  inline-size: 28px;
+  inline-size: 21px;
   aspect-ratio: 1/1;
+}
+
+
+@media (width <= 375px) {
+  .footer__icon {
+    inline-size: 28px;
+  }
 }
