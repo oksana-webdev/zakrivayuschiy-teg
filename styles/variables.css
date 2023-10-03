@@ -4,6 +4,7 @@
 :root {
   --main-font: 'Inter', sans-serif;
   --accent-font: 'Press Start 2P', sans-serif;
+  --heart-fill: #FF0000;
 
 
   --normal-wdth: 400;
@@ -13,7 +14,5 @@
 
   --bg-image: url(../svg/pattern-light.svg);
 
-  --heart-fill: #FF0000;
-  --heart-contour: #000;
-  
+  --heart-contour: #000;  
 }

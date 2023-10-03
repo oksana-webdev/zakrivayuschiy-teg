@@ -15,7 +15,6 @@
 
   --bg-image: url(../svg/pattern-light.svg);
 
-  --heart-fill: #FF0000;
   --heart-contour: #000;
 }
 
@@ -29,7 +28,6 @@
 
   --bg-image: url(../svg/pattern-dark.svg);
 
-  --heart-fill: #FF0000;
   --heart-contour: #00CC14;
 }
 
@@ -44,7 +42,6 @@
     
     --bg-image: url(../svg/pattern-dark.svg);
 
-    --heart-fill: #FF0000;
     --heart-contour: #00CC14;
-  }  
+  }
 }
