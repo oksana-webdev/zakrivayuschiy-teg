@@ -23,7 +23,7 @@
   padding-block-start: 102px;
   
   font-family: var(--main-font);
-  font-variation-settings: var(--normal-wdth, 400);
+  font-weight: var(--normal-wdth, 400);
   line-height: normal;
   color: var(--accent-color, #000);
 
@@ -117,8 +117,7 @@
   transition: transform 0.3s ease;
 }
 
-.theme-menu__button:focus-visible::after
-{
+.theme-menu__button:focus-visible::after {
   transform: scaleX(1);
 }
 
@@ -289,7 +288,7 @@
   z-index: 1;
 
   inline-size: 21px;
-  aspect-ratio: 1/1; 
+  aspect-ratio: 1/1;
 }
 
 
