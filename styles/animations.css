@@ -13,69 +13,15 @@
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
 
-.contour {
-  fill: var(--heart-contour);
-  transition: fill 0.1s;
+@keyframes moving {
+  from {
+    inset-inline-start: -20px;
+  }
+  to {
+    inset-inline-start: -16px;
+  }
 }
 
-.main-body {
-  fill: transparent;
-  transition: fill 0.3s;
-}
-
-.core {
-  fill: transparent;
-  transition: fill 0.3s 0.03s;
-}
-
-.sparks {
-  opacity: 0;
-}
-
-
-.like-icon:hover .core {
-  fill: var(--heart-contour);
-  transition: fill 0.3s;
-}
-
-.like-icon:hover .main-body {
-  fill: var(--heart-contour);
-  transition: fill 0.3s 0.05s;
-}
-
-
-.like-icon:active .core {
-  fill: var(--heart-fill);
-  transition: fill 0.3s;
-}
-
-.like-icon:active .main-body {
-  fill: var(--heart-fill);
-  transition: fill 0.3s 0.05s;
-}
-
-
-.like-icon.is-liked .core {
-  fill: var(--heart-fill);
-  transition: fill 0.3s;
-}
-
-.like-icon.is-liked .main-body {
-  fill: var(--heart-fill);
-  transition: fill 0.3s 0.05s;
-}
-
-.like-icon.is-liked .contour {
-  fill: var(--heart-fill);
-  transition: fill 0.3s 0.06s;
-}
-
-.like-icon.is-liked .heart {
-  scale: 1;
-
-  transform-origin: center;
-  animation: rising 0.3s 0.1s ease-in reverse;
-}
 
 @keyframes rising {
   from {
@@ -86,12 +32,6 @@
   }
 }
 
-.like-icon.is-liked .sparks {
-  opacity: 0;
-
-  animation: sparks 0.3s 0.3s ease-in reverse;
-}
-
 @keyframes sparks {
   from {
     opacity: 0;
@@ -99,4 +39,76 @@
   to {
     opacity: 1;
   }
+}
+
+
+
+.contour {
+  fill: var(--heart-contour);
+  transition: fill 0.1s linear;
+}
+
+.main-body {
+  fill: transparent;
+  transition: fill 0.3s linear;
+}
+
+.core {
+  fill: transparent;
+  transition: fill 0.3s 0.03s linear;
+}
+
+.sparks {
+  opacity: 0;
+}
+
+
+.like-icon:hover .core {
+  fill: var(--heart-contour);
+  transition: fill 0.3s linear;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--heart-contour);
+  transition: fill 0.3s 0.05s linear;
+}
+
+
+.like-icon:active .core {
+  fill: var(--heart-fill);
+  transition: fill 0.3s linear;
+}
+
+.like-icon:active .main-body {
+  fill: var(--heart-fill);
+  transition: fill 0.3s 0.05s linear;
+}
+
+
+.like-icon.is-liked .core {
+  fill: var(--heart-fill);
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--heart-fill);
+  transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--heart-fill);
+  transition: fill 0.3s 0.06s linear;
+}
+
+.like-icon.is-liked .heart {
+  scale: 1;
+
+  transform-origin: center;
+  animation: rising 0.3s 0.1s ease-in alternate;
+}
+
+.like-icon.is-liked .sparks {
+  opacity: 0;
+
+  animation: sparks 0.3s 0.3s ease-in alternate;
 }

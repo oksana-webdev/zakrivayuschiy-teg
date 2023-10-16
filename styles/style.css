@@ -20,9 +20,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* gap: 104px; */
   padding-block-start: 102px;
   
-  font-family: var(--main-font);
+  font-family: var(--main-font, sans-serif);
   font-variation-settings: 'wght' var(--normal-wght, 400);
   line-height: normal;
   color: var(--accent-color, #000);
@@ -34,27 +35,22 @@
   background-attachment: fixed;
 }
 
-.section {
-  min-inline-size: 316px;
-  inline-size: min(98.5dvi, 696px);
-
-  outline: 2px solid var(--accent-color);
-  background-color: var(--bg-color);
-}
-
 .header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  inline-size: clamp(320px, 100%, var(--max-wdth, 696px));
   margin-block-end: 104px;
+  padding: clamp(120px, 32dvi, 136px) 0 25px;
 
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, fantasy);
   font-weight: 400;
+
+  border: 2px solid var(--accent-color);
+  background-color: var(--bg-color);
 }
 
 .header__logo {
-  padding-block-start: min(32dvi, 136px);
-
   font-weight: inherit;
   font-size: clamp(3.0625rem, 2.7292rem + 1.4815vw, 4.0625rem);
   text-transform: uppercase;
@@ -69,7 +65,8 @@
 }
 
 .theme-menu {
-  padding: 25px 0 25px 15px;
+  padding-block-start: 25px;
+  padding-inline-start: 20px;
 }
 
 .theme-menu__list {
@@ -81,22 +78,22 @@
 .theme-menu__button {
   position: relative;
 
-  font-family: var(--accent-font);
+  font-family: inherit;
   font-size: 14px;
   text-transform: uppercase;
 
   border: none;
+
+  transition: opacity 0.3s ease;
 }
 
 .theme-menu__button:hover {
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
+  opacity: 0.6;  
 }
 
 .theme-menu__button:focus {
   outline: none;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
+  opacity: 0.6;  
 }
 
 .theme-menu__button::after {
@@ -123,7 +120,6 @@
 
 .theme-menu__button:disabled {
   opacity: 0.6;
-  transition: opacity 0.3s ease;
   pointer-events: none;
 }
 
@@ -133,31 +129,31 @@
   position: absolute;
   inset-inline-start: -20px;
 
-  color: var(--accent-color);
-
-  animation: moving 0.5s infinite ease-in-out reverse;
+  animation: moving 0.5s infinite ease-in-out alternate;
   /* animation-name: moving;
   animation-duration: 0.5s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
-  animation-direction: reverse; */
-}
-
-@keyframes moving {
-  from {
-    inset-inline-start: -20px;
-  }
-  to {
-    inset-inline-start: -16px;
-  }
+  animation-direction: alternate; */
 }
 
 .main {
-  font-family: var(--main-font);
-  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 51px;
+  inline-size: clamp(320px, 100%, var(--max-wdth, 696px));
+  padding-block-end: 102px;
 }
 
-.main__title {
+.card {
+  font-size: 18px;
+  
+  border: 2px solid var(--accent-color);
+  background-color: var(--bg-color);
+}
+
+.card__title {
   padding: 5px 10px;
 
   font-size: inherit;
@@ -165,13 +161,22 @@
   line-height: normal;
 }
 
-.main__picture {
+.card__picture {
+  object-fit: cover;
+  object-position: center;
+    
   inline-size: 100%;
   aspect-ratio: 1/1;
 }
 
-.main__content {
+.card__content {
   padding: 25px;
+}
+
+.card__description {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
 }
 
 .paragraph {
@@ -179,11 +184,7 @@
   line-height: 116.667%;
 }
 
-.paragraph + .paragraph {
-  padding-block-start: 27px;
-}
-
-.content__card {
+.card__controls {
   display: flex;
   justify-content: end;
   padding-block-start: 28px;
@@ -191,9 +192,11 @@
 }
 
 .card__icon-button {
-  block-size: 38px;
+  block-size: 34px;
 
   outline: 2px solid transparent;
+
+  transition: outline 0.3s ease;
 }
 
 .card__icon-button:focus {
@@ -202,14 +205,13 @@
 
 .card__icon-button:focus-visible {
   outline: 2px solid var(--accent-color);
-
-  transition: outline 0.3s ease;
 }
 
 .button {
   position: relative;
 
   outline: 2px solid var(--accent-color);
+  transition: box-shadow 0.3s ease;
 }
 
 .button::before {
@@ -223,30 +225,24 @@
   background-color: var(--accent-color);
 
   scale: 0 1;
+  transform-origin: left;
+  transition: scale 0.5s ease-in-out;  
 }
 
 .button:hover::before {
-  scale: 1;
-  transform-origin: left;
-  transition: scale 0.5s ease-in-out;
+  scale: 1;  
 }
 
 .button:hover .button__text {
   color: var(--bg-color);
-
-  transition: color 1s ease;
 }
 
 .button:hover .footer__icon {
   color: var(--bg-color);
-
-  transition: color 1s ease;
 }
 
 .button:focus {
-  box-shadow: 3px 3px 0 currentColor;
-
-  transition: box-shadow 0.3s ease;
+  box-shadow: 2px 2px 0 currentColor;
 }
 
 .card__like-button {
@@ -258,15 +254,13 @@
   position: relative;
   z-index: 1;
 
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, fantasy);
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 90%;
-}
 
-.footer {
-  padding: 51px 0 102px;
+  transition: color 1s ease;
 }
 
 .footer__save-button {
@@ -289,6 +283,8 @@
 
   inline-size: 21px;
   aspect-ratio: 1/1;
+
+  transition: color 1s ease;
 }
 
 
