@@ -88,12 +88,12 @@
 }
 
 .theme-menu__button:hover {
-  opacity: 0.6;  
+  opacity: 0.6;
 }
 
 .theme-menu__button:focus {
   outline: none;
-  opacity: 0.6;  
+  opacity: 0.6;
 }
 
 .theme-menu__button::after {
@@ -226,11 +226,11 @@
 
   scale: 0 1;
   transform-origin: left;
-  transition: scale 0.5s ease-in-out;  
+  transition: scale 0.5s ease-in-out;
 }
 
 .button:hover::before {
-  scale: 1;  
+  scale: 1;
 }
 
 .button:hover .button__text {
