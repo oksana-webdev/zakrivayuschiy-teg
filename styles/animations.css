@@ -101,14 +101,10 @@
 }
 
 .like-icon.is-liked .heart {
-  scale: 1;
-
   transform-origin: center;
   animation: rising 0.3s 0.1s ease-in alternate;
 }
 
 .like-icon.is-liked .sparks {
-  opacity: 0;
-
   animation: sparks 0.3s 0.3s ease-in alternate;
 }

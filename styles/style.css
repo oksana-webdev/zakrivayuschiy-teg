@@ -20,7 +20,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* gap: 104px; */
+  /* gap: 100px; */
   padding-block-start: 102px;
   
   font-family: var(--main-font, sans-serif);
@@ -28,7 +28,7 @@
   line-height: normal;
   color: var(--accent-color, #000);
 
-  background-color: var(--bg-color, grey);
+  background-color: var(--bg-color, #FFF);
   background-image: var(--bg-image);
   background-size: 4px;
   background-repeat: repeat;
@@ -39,8 +39,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  inline-size: clamp(320px, 100%, var(--max-wdth, 696px));
-  margin-block-end: 104px;
+  inline-size: clamp(320px, 100%, var(--max-wdth, 700px));
+  margin-block-end: 100px;
   padding: clamp(120px, 32dvi, 136px) 0 25px;
 
   font-family: var(--accent-font, fantasy);
@@ -142,7 +142,7 @@
   flex-direction: column;
   align-items: center;
   gap: 51px;
-  inline-size: clamp(320px, 100%, var(--max-wdth, 696px));
+  inline-size: clamp(320px, 100%, var(--max-wdth, 700px));
   padding-block-end: 102px;
 }
 
@@ -154,7 +154,7 @@
 }
 
 .card__title {
-  padding: 5px 10px;
+  padding: 3px 10px;
 
   font-size: inherit;
   font-variation-settings: 'wght' var(--bold-wght, 700);
@@ -242,6 +242,11 @@
 }
 
 .button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--accent-color);
   box-shadow: 2px 2px 0 currentColor;
 }
 
