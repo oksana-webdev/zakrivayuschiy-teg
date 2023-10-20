@@ -12,10 +12,14 @@
   
   --bg-color:  #FFF;
   --accent-color: #000;
-
-  --bg-image: url(../svg/pattern-light.svg);
+  --card-button: #FFF;
+  
+  --bg-image: repeating-linear-gradient(to left, #d3d3d3, transparent 4px),
+  repeating-linear-gradient(#d3d3d3, transparent 4px),
+  linear-gradient(#e7e7e7 0.01%, #1a1a1a);
 
   --heart-contour: #000;
+  --label-shadow: #FFF;
 }
 
 
@@ -25,10 +29,14 @@
 
   --bg-color: #000;
   --accent-color: #00CC14;
-
-  --bg-image: url(../svg/pattern-dark.svg);
+  --card-button: #00CC14;
+  
+  --bg-image: repeating-linear-gradient(to left, #000, transparent 4px),
+  repeating-linear-gradient(#000, transparent 4px),
+  linear-gradient(#007f0c 0.01%, #004306);
 
   --heart-contour: #00CC14;
+  --label-shadow: #000;
 }
 
 
@@ -39,9 +47,13 @@
 
     --bg-color: #000;
     --accent-color: #00CC14;
-    
-    --bg-image: url(../svg/pattern-dark.svg);
+    --card-button: #00CC14;
+        
+    --bg-image: repeating-linear-gradient(to left, #000, transparent 4px),
+    repeating-linear-gradient(#000, transparent 4px),
+    linear-gradient(#007f0c 0.01%, #004306);
 
     --heart-contour: #00CC14;
+    --label-shadow: #000;
   }
 }

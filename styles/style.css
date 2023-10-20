@@ -20,7 +20,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* gap: 100px; */
   padding-block-start: 102px;
   
   font-family: var(--main-font, sans-serif);
@@ -30,9 +29,7 @@
 
   background-color: var(--bg-color, #FFF);
   background-image: var(--bg-image);
-  background-size: 4px;
-  background-repeat: repeat;
-  background-attachment: fixed;
+  background-size: cover;
 }
 
 .header {
@@ -141,7 +138,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 51px;
+  gap: 50px;
   inline-size: clamp(320px, 100%, var(--max-wdth, 700px));
   padding-block-end: 102px;
 }
@@ -153,6 +150,34 @@
   background-color: var(--bg-color);
 }
 
+.null .card__picture {
+  filter: sepia(60%);
+}
+
+.first__one .card__picture {
+  filter: contrast(150%);
+}
+
+.second__one .card__picture {
+
+}
+
+.second__two .card__picture {
+
+}
+
+.third__one .card__picture {
+
+}
+
+.third__two .card__picture {
+
+}
+
+.fourth .card__picture {
+
+}
+
 .card__title {
   padding: 3px 10px;
 
@@ -161,12 +186,41 @@
   line-height: normal;
 }
 
+.card__image {
+  position: relative;
+
+  outline: 2px solid var(--accent-color);
+}
+
 .card__picture {
   object-fit: cover;
   object-position: center;
     
   inline-size: 100%;
-  aspect-ratio: 1/1;
+  block-size: 100%;
+  aspect-ratio: 1/1; 
+}
+
+.card__label {
+  position: absolute;
+  inset-inline-end: 25px;
+  inset-block-start: 25px;
+
+  color: var(--accent-color, #000); 
+  font-family: var(--accent-font, fantasy);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+
+  text-shadow:
+  1px 1px 0 var(--label-shadow),
+  1px -1px 0 var(--label-shadow),
+  -1px 1px 0 var(--label-shadow),
+  -1px -1px 0 var(--label-shadow);
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
 }
 
 .card__content {
@@ -210,6 +264,7 @@
 .button {
   position: relative;
 
+  color: var(--card-button);
   outline: 2px solid var(--accent-color);
   transition: box-shadow 0.3s ease;
 }
@@ -229,20 +284,8 @@
   transition: scale 0.5s ease-in-out;
 }
 
-.button:hover::before {
+.button:hover::before {  
   scale: 1;
-}
-
-.button:hover .button__text {
-  color: var(--bg-color);
-}
-
-.button:hover .footer__icon {
-  color: var(--bg-color);
-}
-
-.button:focus {
-  outline: none;
 }
 
 .button:focus-visible {
@@ -253,6 +296,10 @@
 .card__like-button {
   inline-size: 126px;
   block-size: 34px;
+}
+
+.card__like-button:focus {
+  outline: none;
 }
 
 .button__text {
@@ -266,6 +313,8 @@
   line-height: 90%;
 
   transition: color 1s ease;
+
+  mix-blend-mode: difference;
 }
 
 .footer__save-button {
@@ -287,14 +336,73 @@
   z-index: 1;
 
   inline-size: 21px;
-  aspect-ratio: 1/1;
+  block-size: 21px;
 
   transition: color 1s ease;
+
+  mix-blend-mode: difference;
+}
+
+.modal {
+  inline-size: 357px;
+  block-size: 193px;
+  padding: 31px;
+
+  color: var(--accent-color, #000);
+  font-family: var(--accent-font, fantasy);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  text-transform: uppercase;
+
+  background-color: var(--bg-color);
+  border: 2px solid var(--accent-color);
+}
+
+.modal::backdrop {
+  background-color: rgb(0 0 0 / 0.75);  
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.modal__content {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+}
+
+.modal__icon {
+  inline-size: 39px;
+  block-size: 39px;  
+}
+
+.modal__button {
+  inline-size: 293px;
+  block-size: 34px;
 }
 
 
 @media (width <= 375px) {
   .footer__icon {
     inline-size: 28px;
+    block-size: 28px;
+  }
+
+  .card__label {
+    inset-inline-end: 11px;
+  }
+
+  .modal {
+    padding: 32px 42px;
+  }
+
+  .modal__button {
+    inline-size: 257px;    
   }
 }
