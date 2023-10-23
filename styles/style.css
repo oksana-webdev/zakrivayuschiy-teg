@@ -155,27 +155,31 @@
 }
 
 .first__one .card__picture {
-  filter: contrast(150%);
+  filter: grayscale(50%) contrast(200%);
+}
+
+.first__two .card__picture {
+  filter: saturate(200%);
 }
 
 .second__one .card__picture {
-
+  filter: opacity(0.6);
 }
 
 .second__two .card__picture {
-
+  filter: brightness(120%);
 }
 
 .third__one .card__picture {
-
+ filter: blur(2px);
 }
 
 .third__two .card__picture {
-
+  filter: invert(10%);
 }
 
 .fourth .card__picture {
-
+  filter: hue-rotate(0.1turn);
 }
 
 .card__title {
@@ -188,6 +192,8 @@
 
 .card__image {
   position: relative;
+
+  display: flex;
 
   outline: 2px solid var(--accent-color);
 }
@@ -214,13 +220,21 @@
   line-height: normal;
   text-transform: uppercase;
 
-  text-shadow:
-  1px 1px 0 var(--label-shadow),
-  1px -1px 0 var(--label-shadow),
-  -1px 1px 0 var(--label-shadow),
-  -1px -1px 0 var(--label-shadow);
   opacity: 0.5;
   mix-blend-mode: hard-light;
+  text-shadow:
+  1px 0 var(--label-shadow, #FFF),
+  0 -1px var(--label-shadow, #FFF),
+  -1px 0 var(--label-shadow, #FFF),
+  0 1px var(--label-shadow, #FFF);
+}
+  
+@supports(text-stroke: 1px var(--label-shadow)) or (-webkit-text-stroke: 1px var(--label-shadow)) {
+  .card__label {
+    -webkit-text-stroke: 1px var(--label-shadow);
+    text-stroke: 1px var(--label-shadow);
+    text-shadow: none;
+  }
 }
 
 .card__content {
