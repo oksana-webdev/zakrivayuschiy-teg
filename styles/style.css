@@ -211,8 +211,8 @@
   position: absolute;
   inset-inline-end: 25px;
   inset-block-start: 25px;
-
-  color: var(--accent-color, #000); 
+  
+  color: var(--accent-color, #000);
   font-family: var(--accent-font, fantasy);
   font-size: 14px;
   font-style: normal;
@@ -298,7 +298,7 @@
   transition: scale 0.5s ease-in-out;
 }
 
-.button:hover::before {  
+.button:hover::before {
   scale: 1;
 }
 
