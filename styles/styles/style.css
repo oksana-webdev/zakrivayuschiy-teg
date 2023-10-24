@@ -1,0 +1,422 @@
+/* Здесь вы напишете основную часть стилей страницы.
+
+Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
+✦ theme-dark — класс тёмной темы
+✦ theme-light — класс светлой темы
+✦ like-icon — для svg-иконки анимированного сердца
+✦ card__like-button — для кнопки Like рядом с иконкой
+✦ card__icon-button — для кнопки, оборачивающей иконку
+✦ card__icon-button — для кнопки, оборачивающей иконку
+✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
+✦ button__text — для обозначения текстового элемента внутри кнопки
+
+Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
+
+*/
+
+.page {
+  min-inline-size: 320px;
+  min-block-size: 100dvb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block-start: 102px;
+  
+  font-family: var(--main-font, sans-serif);
+  font-variation-settings: 'wght' var(--normal-wght, 400);
+  line-height: normal;
+  color: var(--accent-color, #000);
+
+  background-color: var(--bg-color, #FFF);
+  background-image: var(--bg-image);
+  background-size: cover;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  inline-size: clamp(320px, 100%, var(--max-wdth, 700px));
+  margin-block-end: 100px;
+  padding: clamp(120px, 32dvi, 136px) 0 25px;
+
+  font-family: var(--accent-font, fantasy);
+  font-weight: 400;
+
+  border: 2px solid var(--accent-color);
+  background-color: var(--bg-color);
+}
+
+.header__logo {
+  font-weight: inherit;
+  font-size: clamp(3.0625rem, 2.7292rem + 1.4815vw, 4.0625rem);
+  text-transform: uppercase;
+}
+
+.header__title {
+  padding-block-start: 20px;
+
+  font-weight: inherit;
+  font-size: clamp(0.875rem, 0.6875rem + 0.8333vw, 1.4375rem);
+  text-transform: uppercase;
+}
+
+.theme-menu {
+  padding-block-start: 25px;
+  padding-inline-start: 20px;
+}
+
+.theme-menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.theme-menu__button {
+  position: relative;
+
+  font-family: inherit;
+  font-size: 14px;
+  text-transform: uppercase;
+
+  border: none;
+
+  transition: opacity 0.3s ease;
+}
+
+.theme-menu__button:hover {
+  opacity: 0.6;
+}
+
+.theme-menu__button:focus {
+  outline: none;
+  opacity: 0.6;
+}
+
+.theme-menu__button::after {
+  content: '';
+
+  position: absolute;
+  inset-inline-start: 0;
+  inset-block-end: -5px;
+
+  inline-size: 100%;
+  block-size: 2px;
+
+  background-color: var(--accent-color);
+  opacity: 0.6;
+
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.theme-menu__button:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.theme-menu__button:disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.theme-menu__button:disabled::before {
+  content: '▶';
+
+  position: absolute;
+  inset-inline-start: -20px;
+
+  animation: moving 0.5s infinite ease-in-out alternate;
+  /* animation-name: moving;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate; */
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  inline-size: clamp(320px, 100%, var(--max-wdth, 700px));
+  padding-block-end: 102px;
+}
+
+.card {
+  font-size: 18px;
+  
+  border: 2px solid var(--accent-color);
+  background-color: var(--bg-color);
+}
+
+.null .card__picture {
+  filter: sepia(60%);
+}
+
+.first__one .card__picture {
+  filter: grayscale(50%) contrast(200%);
+}
+
+.first__two .card__picture {
+  filter: saturate(200%);
+}
+
+.second__one .card__picture {
+  filter: opacity(0.6);
+}
+
+.second__two .card__picture {
+  filter: brightness(120%);
+}
+
+.third__one .card__picture {
+ filter: blur(2px);
+}
+
+.third__two .card__picture {
+  filter: invert(10%);
+}
+
+.fourth .card__picture {
+  filter: hue-rotate(0.1turn);
+}
+
+.card__title {
+  padding: 3px 10px;
+
+  font-size: inherit;
+  font-variation-settings: 'wght' var(--bold-wght, 700);
+  line-height: normal;
+}
+
+.card__image {
+  position: relative;
+
+  display: flex;
+
+  outline: 2px solid var(--accent-color);
+}
+
+.card__picture {
+  object-fit: cover;
+  object-position: center;
+    
+  inline-size: 100%;
+  block-size: 100%;
+  aspect-ratio: 1/1;
+}
+
+.card__label {
+  position: absolute;
+  inset-inline-end: 25px;
+  inset-block-start: 25px;
+  
+  color: var(--accent-color, #000);
+  font-family: var(--accent-font, fantasy);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+  text-shadow:
+  1px 0 var(--label-shadow, #FFF),
+  0 -1px var(--label-shadow, #FFF),
+  -1px 0 var(--label-shadow, #FFF),
+  0 1px var(--label-shadow, #FFF);
+}
+  
+@supports(text-stroke: 1px var(--label-shadow)) or (-webkit-text-stroke: 1px var(--label-shadow)) {
+  .card__label {
+    -webkit-text-stroke: 1px var(--label-shadow);
+    text-stroke: 1px var(--label-shadow);
+    text-shadow: none;
+  }
+}
+
+.card__content {
+  padding: 25px;
+}
+
+.card__description {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+}
+
+.paragraph {
+  font-variation-settings: 'wght' var(--normal-wght, 400);
+  line-height: 116.667%;
+}
+
+.card__controls {
+  display: flex;
+  justify-content: end;
+  padding-block-start: 28px;
+  gap: 9px;
+}
+
+.card__icon-button {
+  block-size: 34px;
+
+  outline: 2px solid transparent;
+
+  transition: outline 0.3s ease;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  outline: 2px solid var(--accent-color);
+}
+
+.button {
+  position: relative;
+
+  color: var(--card-button);
+  outline: 2px solid var(--accent-color);
+  transition: box-shadow 0.3s ease;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  inline-size: 100%;
+  block-size: 100%;
+  inset-inline-start: 0;
+  inset-block-start: 0;
+
+  background-color: var(--accent-color);
+
+  scale: 0 1;
+  transform-origin: left;
+  transition: scale 0.5s ease-in-out;
+}
+
+.button:hover::before {
+  scale: 1;
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--accent-color);
+  box-shadow: 2px 2px 0 currentColor;
+}
+
+.card__like-button {
+  inline-size: 126px;
+  block-size: 34px;
+}
+
+.card__like-button:focus {
+  outline: none;
+}
+
+.button__text {
+  position: relative;
+  z-index: 1;
+
+  font-family: var(--accent-font, fantasy);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 90%;
+
+  transition: color 1s ease;
+
+  mix-blend-mode: difference;
+}
+
+.footer__save-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+
+  padding: 15px;
+  min-inline-size: 306px;
+  inline-size: min(80dvi, 335px);
+    
+  background-color: var(--bg-color);
+}
+
+.footer__icon {
+  position: relative;
+  z-index: 1;
+
+  inline-size: 21px;
+  block-size: 21px;
+
+  transition: color 1s ease;
+
+  mix-blend-mode: difference;
+}
+
+.modal {
+  inline-size: 357px;
+  block-size: 193px;
+  padding: 31px;
+
+  color: var(--accent-color, #000);
+  font-family: var(--accent-font, fantasy);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  text-transform: uppercase;
+
+  background-color: var(--bg-color);
+  border: 2px solid var(--accent-color);
+}
+
+.modal::backdrop {
+  background-color: rgb(0 0 0 / 0.75);
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.modal__content {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+}
+
+.modal__icon {
+  inline-size: 39px;
+  block-size: 39px;
+}
+
+.modal__button {
+  inline-size: 293px;
+  block-size: 34px;
+}
+
+
+@media (width <= 375px) {
+  .footer__icon {
+    inline-size: 28px;
+    block-size: 28px;
+  }
+
+  .card__label {
+    inset-inline-end: 11px;
+  }
+
+  .modal {
+    padding: 32px 42px;
+  }
+
+  .modal__button {
+    inline-size: 257px;
+  }
+}
