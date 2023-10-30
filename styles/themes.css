@@ -14,8 +14,8 @@
   --accent-color: #000;
   --card-button: #FFF;
   
-  --bg-image: repeating-linear-gradient(to left, #d3d3d3, transparent 4px),
-  repeating-linear-gradient(#d3d3d3, transparent 4px),
+  --bg-image: repeating-linear-gradient(to left, #d3d3d3, transparent 2px),
+  repeating-linear-gradient(#d3d3d3, transparent 2px),
   linear-gradient(#e7e7e7 0.01%, #1a1a1a);
 
   --heart-contour: #000;
@@ -31,8 +31,8 @@
   --accent-color: #00CC14;
   --card-button: #00CC14;
   
-  --bg-image: repeating-linear-gradient(to left, #000, transparent 4px),
-  repeating-linear-gradient(#000, transparent 4px),
+  --bg-image: repeating-linear-gradient(to left, #000, transparent 2px),
+  repeating-linear-gradient(#000, transparent 2px),
   linear-gradient(#007f0c 0.01%, #004306);
 
   --heart-contour: #00CC14;
@@ -49,8 +49,8 @@
     --accent-color: #00CC14;
     --card-button: #00CC14;
         
-    --bg-image: repeating-linear-gradient(to left, #000, transparent 4px),
-    repeating-linear-gradient(#000, transparent 4px),
+    --bg-image: repeating-linear-gradient(to left, #000, transparent 2px),
+    repeating-linear-gradient(#000, transparent 2px),
     linear-gradient(#007f0c 0.01%, #004306);
 
     --heart-contour: #00CC14;

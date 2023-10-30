@@ -30,13 +30,14 @@
   background-color: var(--bg-color, #FFF);
   background-image: var(--bg-image);
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  inline-size: clamp(320px, 100%, var(--max-wdth, 700px));
+  inline-size: var(--content-wdth, 320px);  
   margin-block-end: 100px;
   padding: clamp(120px, 32dvi, 136px) 0 25px;
 
@@ -79,8 +80,6 @@
   font-size: 14px;
   text-transform: uppercase;
 
-  border: none;
-
   transition: opacity 0.3s ease;
 }
 
@@ -90,7 +89,6 @@
 
 .theme-menu__button:focus {
   outline: none;
-  opacity: 0.6;
 }
 
 .theme-menu__button::after {
@@ -111,6 +109,10 @@
   transition: transform 0.3s ease;
 }
 
+.theme-menu__button:focus-visible {
+  opacity: 0.6;
+}
+
 .theme-menu__button:focus-visible::after {
   transform: scaleX(1);
 }
@@ -124,6 +126,7 @@
   content: '▶';
 
   position: absolute;
+  inset-block-start: 0;
   inset-inline-start: -20px;
 
   animation: moving 0.5s infinite ease-in-out alternate;
@@ -139,7 +142,7 @@
   flex-direction: column;
   align-items: center;
   gap: 50px;
-  inline-size: clamp(320px, 100%, var(--max-wdth, 700px));
+  inline-size: var(--content-wdth, 320px);
   padding-block-end: 102px;
 }
 
@@ -150,40 +153,8 @@
   background-color: var(--bg-color);
 }
 
-.null .card__picture {
-  filter: sepia(60%);
-}
-
-.first__one .card__picture {
-  filter: grayscale(50%) contrast(200%);
-}
-
-.first__two .card__picture {
-  filter: saturate(200%);
-}
-
-.second__one .card__picture {
-  filter: opacity(0.6);
-}
-
-.second__two .card__picture {
-  filter: brightness(120%);
-}
-
-.third__one .card__picture {
- filter: blur(2px);
-}
-
-.third__two .card__picture {
-  filter: invert(10%);
-}
-
-.fourth .card__picture {
-  filter: hue-rotate(0.1turn);
-}
-
 .card__title {
-  padding: 3px 10px;
+  padding: 4px 10px;
 
   font-size: inherit;
   font-variation-settings: 'wght' var(--bold-wght, 700);
@@ -194,8 +165,9 @@
   position: relative;
 
   display: flex;
+  margin: 0;
 
-  outline: 2px solid var(--accent-color);
+  border: 2px solid var(--accent-color);
 }
 
 .card__picture {
@@ -205,6 +177,38 @@
   inline-size: 100%;
   block-size: 100%;
   aspect-ratio: 1/1;
+}
+
+.sepia {
+  filter: sepia(60%);
+}
+
+.grayscale {
+  filter: grayscale(50%) contrast(200%);
+}
+
+.saturate {
+  filter: saturate(200%);
+}
+
+.opacity {
+  filter: opacity(0.6);
+}
+
+.brightness {
+  filter: brightness(120%);
+}
+
+.blur {
+ filter: blur(2px);
+}
+
+.invert {
+  filter: invert(10%);
+}
+
+.hue-rotate {
+  filter: hue-rotate(0.1turn);
 }
 
 .card__label {
@@ -222,11 +226,7 @@
 
   opacity: 0.5;
   mix-blend-mode: hard-light;
-  text-shadow:
-  1px 0 var(--label-shadow, #FFF),
-  0 -1px var(--label-shadow, #FFF),
-  -1px 0 var(--label-shadow, #FFF),
-  0 1px var(--label-shadow, #FFF);
+  text-shadow: 0 0 1px var(--label-shadow, #FFF);
 }
   
 @supports(text-stroke: 1px var(--label-shadow)) or (-webkit-text-stroke: 1px var(--label-shadow)) {
@@ -255,6 +255,7 @@
 .card__controls {
   display: flex;
   justify-content: end;
+  align-items: center;
   padding-block-start: 28px;
   gap: 9px;
 }
@@ -275,12 +276,26 @@
   outline: 2px solid var(--accent-color);
 }
 
+.card__like-button {
+  inline-size: 126px;
+  padding: 7px;
+}
+
+.card__like-button:focus {
+  outline: none;
+}
+
 .button {
   position: relative;
 
   color: var(--card-button);
-  outline: 2px solid var(--accent-color);
+  border: 2px solid var(--accent-color);
   transition: box-shadow 0.3s ease;
+}
+
+.button:focus-visible {
+  border: 2px solid var(--accent-color);
+  box-shadow: 2px 2px 0 var(--accent-color);
 }
 
 .button::before {
@@ -300,20 +315,6 @@
 
 .button:hover::before {
   scale: 1;
-}
-
-.button:focus-visible {
-  outline: 2px solid var(--accent-color);
-  box-shadow: 2px 2px 0 currentColor;
-}
-
-.card__like-button {
-  inline-size: 126px;
-  block-size: 34px;
-}
-
-.card__like-button:focus {
-  outline: none;
 }
 
 .button__text {
@@ -359,7 +360,6 @@
 
 .modal {
   inline-size: 357px;
-  block-size: 193px;
   padding: 31px;
 
   color: var(--accent-color, #000);
@@ -381,24 +381,29 @@
 .modal__form {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 30px;
 }
 
 .modal__content {
-  display: flex;
-  justify-content: start;
+  display: flex;  
   align-items: center;
   gap: 20px;
 }
 
 .modal__icon {
-  inline-size: 39px;
-  block-size: 39px;
+  inline-size: 40px;
+  block-size: 40px;
+}
+
+.modal__text {
+  max-inline-size: 200px;
 }
 
 .modal__button {
-  inline-size: 293px;
-  block-size: 34px;
+  inline-size: 293px;  
+  padding: 9px;
 }
 
 
@@ -410,10 +415,6 @@
 
   .card__label {
     inset-inline-end: 11px;
-  }
-
-  .modal {
-    padding: 32px 42px;
   }
 
   .modal__button {

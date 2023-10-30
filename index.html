@@ -50,35 +50,43 @@
       </nav>
     </header>
     <main class="main">
-      <article class="card null">  
+      <article class="card">  
         <h2 class="card__title">
           Фритрек и нулевой спринт: Подготовка к работе
         </h2>
-        <div class="card__image">
+        <figure class="card__image">
           <img
           src="./images/gagarin.png"
-          alt=""
-          class="card__picture"/>
-          <p class="card__label">
+          alt="Портрет Гагарина в скафандре"
+          class="card__picture sepia"/>
+          <figcaption class="card__label">
             Поехали!
-          </p>
-        </div>
+          </figcaption>
+        </figure>
         <div class="card__content">
           <div class="card__description">
             <p class="paragraph">
               Это было самое начало пути. На&nbsp;этом этапе важно было проникнуться основами и&nbsp;настроиться на&nbsp;учёбу. И, возможно, подумать, как новые знания могут повлиять на&nbsp;ваше будущее.
             </p>
             <p class="paragraph">
-              Отправление в&nbsp;непознаную даль... Страшно? Да. Но&nbsp;и&nbsp;очень интересно. Главное&nbsp;&mdash; хорошая подготовка и&nbsp;поддержка ЦУП.<br>"Кто меня там встретит, как меня обнимут<br>И какие песни мне споют?"
-            </p>
+              Отправление в&nbsp;непознаную даль... Страшно? Да. Но&nbsp;и&nbsp;очень интересно. Главное&nbsp;&mdash; хорошая подготовка и&nbsp;поддержка ЦУП.
+              <blockquote>
+                <p class="paragraph">
+                  "Кто меня там встретит, как меня обнимут
+                </p>
+                <p class="paragraph">
+                 И какие песни мне споют?""
+                </p>
+              </blockquote>
           </div>
           <div class="card__controls">
             <button
-          type="button"
-          aria-hidden="true"
-          class="card__icon-button">
+            type="button"
+            aria-hidden="true"
+            aria-labelledby="like"
+            class="card__icon-button">
               <svg xmlns="http://www.w3.org/2000/svg" width="39" height="36" viewBox="0 0 39 36" fill="none"
-            class="like-icon">
+              class="like-icon">
                 <g class="heart">
                   <path class="contour" d="M12 6H9V9H12V6ZM15 6H12V9H15V6ZM9 9H6V12H9V9ZM9 12H6V15H9V12ZM9 15H6V18H9V15ZM18 6H15V9H18V6ZM12 18H9V21H12V18ZM15 21H12V24H15V21ZM18 24H15V27H18V24ZM27 6H30V9H27V6ZM24 6H27V9H24V6ZM30 9H33V12H30V9ZM30 12H33V15H30V12ZM30 15H33V18H30V15ZM21 6H24V9H21V6ZM27 18H30V21H27V18ZM24 21H27V24H24V21ZM21 24H24V27H21V24ZM21 27H18V30H21V27ZM21 9H18V12H21V9Z" fill="var(--heart-contour)"/>
 
@@ -91,6 +99,7 @@
             </button>
             <button
             type="button"
+            id="like"
             class="button card__like-button">
               <span class="button__text">
                 Like
@@ -99,19 +108,19 @@
           </div>        
         </div>
       </article>
-      <article class="card first__one">  
+      <article class="card">  
         <h2 class="card__title">
           1 спринт: Я — чистый лист
         </h2>
-        <div class="card__image">
+        <figure class="card__image">
           <img
           src="./images/voprosy.png"
           alt="Человек с раскрытым зонтом под дождём из вопросов"
-          class="card__picture"/>
-          <p class="card__label">
+          class="card__picture grayscale"/>
+          <figcaption class="card__label">
             ...that is the question
-          </p>
-        </div>
+          </figcaption>
+        </figure>
         <div class="card__content">
           <div class="card__description">
             <p class="paragraph">
@@ -123,11 +132,12 @@
           </div>
           <div class="card__controls">
             <button
-          type="button"
-          aria-hidden="true"
-          class="card__icon-button">
+            type="button"
+            aria-hidden="true"
+            aria-labelledby="like"
+            class="card__icon-button">
               <svg xmlns="http://www.w3.org/2000/svg" width="39" height="36" viewBox="0 0 39 36" fill="none"
-            class="like-icon">
+              class="like-icon">
                 <g class="heart">
                   <path class="contour" d="M12 6H9V9H12V6ZM15 6H12V9H15V6ZM9 9H6V12H9V9ZM9 12H6V15H9V12ZM9 15H6V18H9V15ZM18 6H15V9H18V6ZM12 18H9V21H12V18ZM15 21H12V24H15V21ZM18 24H15V27H18V24ZM27 6H30V9H27V6ZM24 6H27V9H24V6ZM30 9H33V12H30V9ZM30 12H33V15H30V12ZM30 15H33V18H30V15ZM21 6H24V9H21V6ZM27 18H30V21H27V18ZM24 21H27V24H24V21ZM21 24H24V27H21V24ZM21 27H18V30H21V27ZM21 9H18V12H21V9Z" fill="var(--heart-contour)"/>
 
@@ -140,6 +150,7 @@
             </button>
             <button
             type="button"
+            id="like"
             class="button card__like-button">
               <span class="button__text">
                 Like
@@ -148,19 +159,19 @@
           </div>        
         </div>
       </article>
-      <article class="card first__two">  
+      <article class="card">  
         <h2 class="card__title">
           1 спринт: А если не получится?
         </h2>
-        <div class="card__image">
+        <figure class="card__image">
           <img
           src="./images/poluchilos.png"
           alt="Девушка радуется увиденному на ноутбуке результату"
-          class="card__picture"/>
-          <p class="card__label">
+          class="card__picture saturate"/>
+          <figcaption class="card__label">
              ура!
-          </p>
-        </div>
+          </figcaption>
+        </figure>
         <div class="card__content">
           <div class="card__description">
             <p class="paragraph">
@@ -172,11 +183,12 @@
           </div>
           <div class="card__controls">
             <button
-          type="button"
-          aria-hidden="true"
-          class="card__icon-button">
+            type="button"
+            aria-hidden="true"
+            aria-labelledby="like"
+            class="card__icon-button">
               <svg xmlns="http://www.w3.org/2000/svg" width="39" height="36" viewBox="0 0 39 36" fill="none"
-            class="like-icon">
+              class="like-icon">
                 <g class="heart">
                   <path class="contour" d="M12 6H9V9H12V6ZM15 6H12V9H15V6ZM9 9H6V12H9V9ZM9 12H6V15H9V12ZM9 15H6V18H9V15ZM18 6H15V9H18V6ZM12 18H9V21H12V18ZM15 21H12V24H15V21ZM18 24H15V27H18V24ZM27 6H30V9H27V6ZM24 6H27V9H24V6ZM30 9H33V12H30V9ZM30 12H33V15H30V12ZM30 15H33V18H30V15ZM21 6H24V9H21V6ZM27 18H30V21H27V18ZM24 21H27V24H24V21ZM21 24H24V27H21V24ZM21 27H18V30H21V27ZM21 9H18V12H21V9Z" fill="var(--heart-contour)"/>
 
@@ -189,6 +201,7 @@
             </button>
             <button
             type="button"
+            id="like"
             class="button card__like-button">
               <span class="button__text">
                 Like
@@ -197,19 +210,19 @@
           </div>        
         </div>
       </article>
-      <article class="card second__one">  
+      <article class="card">  
         <h2 class="card__title">
           2 спринт: Погоня за идеалом
         </h2>
-        <div class="card__image">
+        <figure class="card__image">
           <img
           src="./images/ideal.png"
           alt="Ребенок рисует на стене под линейку"
           class="card__picture"/>
-          <p class="card__label">
+          <figcaption class="card__label opacity">
             идеал
-          </p>
-        </div>  
+          </figcaption>
+        </figure>  
         <div class="card__content">
           <div class="card__description">
             <p class="paragraph">
@@ -221,11 +234,12 @@
           </div>  
           <div class="card__controls">
             <button
-          type="button"
-          aria-hidden="true"
-          class="card__icon-button">
+            type="button"
+            aria-hidden="true"
+            aria-labelledby="like"
+            class="card__icon-button">
               <svg xmlns="http://www.w3.org/2000/svg" width="39" height="36" viewBox="0 0 39 36" fill="none"
-            class="like-icon">
+              class="like-icon">
                 <g class="heart">
                   <path class="contour" d="M12 6H9V9H12V6ZM15 6H12V9H15V6ZM9 9H6V12H9V9ZM9 12H6V15H9V12ZM9 15H6V18H9V15ZM18 6H15V9H18V6ZM12 18H9V21H12V18ZM15 21H12V24H15V21ZM18 24H15V27H18V24ZM27 6H30V9H27V6ZM24 6H27V9H24V6ZM30 9H33V12H30V9ZM30 12H33V15H30V12ZM30 15H33V18H30V15ZM21 6H24V9H21V6ZM27 18H30V21H27V18ZM24 21H27V24H24V21ZM21 24H24V27H21V24ZM21 27H18V30H21V27ZM21 9H18V12H21V9Z" fill="var(--heart-contour)"/>
 
@@ -238,6 +252,7 @@
             </button>
             <button
             type="button"
+            id="like"
             class="button card__like-button">
               <span class="button__text">
                 Like
@@ -246,19 +261,19 @@
           </div>        
         </div>
       </article>
-      <article class="card second__two">  
+      <article class="card">  
         <h2 class="card__title">
           2 спринт: О тех, кто рядом
         </h2>
-        <div class="card__image">
+        <figure class="card__image">
           <img
           src="./images/friends.png"
           alt="Два друга обнявшись идут по дороге"
-          class="card__picture"/>
-          <p class="card__label">
+          class="card__picture brightness"/>
+          <figcaption class="card__label">
             supports
-          </p>
-        </div>
+          </figcaption>
+        </figure>
         <div class="card__content">
           <div class="card__description">
             <p class="paragraph">
@@ -270,9 +285,10 @@
           </div>  
           <div class="card__controls">
             <button
-          type="button"
-          aria-hidden="true"
-          class="card__icon-button">
+            type="button"
+            aria-hidden="true"
+            aria-labelledby="like"
+            class="card__icon-button">
               <svg xmlns="http://www.w3.org/2000/svg" width="39" height="36" viewBox="0 0 39 36" fill="none"
             class="like-icon">
                 <g class="heart">
@@ -287,41 +303,43 @@
             </button>
             <button
             type="button"
+            id="like"
             class="button card__like-button">
               <span class="button__text">
                 Like
               </span>
             </button>
-          </div>        
+          </div>  
         </div>
       </article>
-      <article class="card third__one">  
+      <article class="card">  
         <h2 class="card__title">
           3 спринт: Обходные стратегии
         </h2>
-        <div class="card__image">
+        <figure class="card__image">
           <img
           src="./images/tea.png"
           alt="Толстый белый гусь держит бокал красного вина"
-          class="card__picture"/>
-          <p class="card__label">
+          class="card__picture blur"/>
+          <figcaption class="card__label">
             проблемы и градусы
-          </p>
-        </div>  
+          </figcaption>
+        </figure>  
         <div class="card__content">
           <div class="card__description">
             <p class="paragraph">
               На&nbsp;этом курсе вы&nbsp;постоянно решали разные задачи. В&nbsp;какой-то момент вам могло показаться, что решения просто иссякли. Значит, пришло время посмотреть на&nbsp;задачу под другим углом.
             </p>
             <p class="paragraph">
-              А&nbsp;точнее под другим градусом. Ну, углы ведь&nbsp;в&nbsp;градусах измеряются. И&nbsp;градус лучше повышать, иначе&nbsp;от&nbsp;понижения градуса количество проблем увеличиться.
+              А&nbsp;точнее под другим градусом. Ну, углы ведь&nbsp;в&nbsp;градусах измеряются. И&nbsp;градус лучше повышать, иначе&nbsp;от&nbsp;понижения градуса количество проблем увеличится.
             </p>
-          </div>  
+          </div>
           <div class="card__controls">
             <button
-          type="button"
-          aria-hidden="true"
-          class="card__icon-button">
+            type="button"
+            aria-hidden="true"
+            aria-labelledby="like"
+            class="card__icon-button">
               <svg xmlns="http://www.w3.org/2000/svg" width="39" height="36" viewBox="0 0 39 36" fill="none"
             class="like-icon">
                 <g class="heart">
@@ -336,6 +354,7 @@
             </button>
             <button
             type="button"
+            id="like"
             class="button card__like-button">
               <span class="button__text">
                 Like
@@ -344,19 +363,19 @@
           </div>        
         </div>
       </article>
-      <article class="card third__two">  
+      <article class="card">  
         <h2 class="card__title">
           3 спринт: Когда опускаются руки
         </h2>
-        <div class="card__image">
+        <figure class="card__image">
           <img
           src="./images/yomoyo2.png"
           alt="Коллаж из цитат и портрета Ё Моё"
-          class="card__picture"/>
-          <p class="card__label">
+          class="card__picture invert"/>
+          <figcaption class="card__label">
             Ё Моё
-          </p>
-        </div>  
+          </figcaption>
+        </figure>  
         <div class="card__content">
           <div class="card__description">
             <p class="paragraph">
@@ -368,11 +387,12 @@
           </div>  
           <div class="card__controls">
             <button
-          type="button"
-          aria-hidden="true"
-          class="card__icon-button">
+            type="button"
+            aria-hidden="true"
+            aria-labelledby="like"
+            class="card__icon-button">
               <svg xmlns="http://www.w3.org/2000/svg" width="39" height="36" viewBox="0 0 39 36" fill="none"
-            class="like-icon">
+              class="like-icon">
                 <g class="heart">
                   <path class="contour" d="M12 6H9V9H12V6ZM15 6H12V9H15V6ZM9 9H6V12H9V9ZM9 12H6V15H9V12ZM9 15H6V18H9V15ZM18 6H15V9H18V6ZM12 18H9V21H12V18ZM15 21H12V24H15V21ZM18 24H15V27H18V24ZM27 6H30V9H27V6ZM24 6H27V9H24V6ZM30 9H33V12H30V9ZM30 12H33V15H30V12ZM30 15H33V18H30V15ZM21 6H24V9H21V6ZM27 18H30V21H27V18ZM24 21H27V24H24V21ZM21 24H24V27H21V24ZM21 27H18V30H21V27ZM21 9H18V12H21V9Z" fill="var(--heart-contour)"/>
 
@@ -385,6 +405,7 @@
             </button>
             <button
             type="button"
+            id="like"
             class="button card__like-button">
               <span class="button__text">
                 Like
@@ -393,19 +414,19 @@
           </div>        
         </div>
       </article>
-      <article class="card fourth">  
+      <article class="card">  
         <h2 class="card__title">
           «Сейчас я здесь»
         </h2>
-        <div class="card__image">
+        <figure class="card__image">
           <img
           src="./images/depth.png"
           alt="Фото аквалангиста в толще воды"
-          class="card__picture"/>
-          <p class="card__label">
+          class="card__picture hue-rotate"/>
+          <figcaption class="card__label">
             a whole new world
-          </p>
-        </div>  
+          </figcaption>
+        </figure>  
         <div class="card__content">
           <div class="card__description">
             <p class="paragraph">
@@ -417,9 +438,10 @@
           </div>  
           <div class="card__controls">
             <button
-          type="button"
-          aria-hidden="true"
-          class="card__icon-button">
+            type="button"
+            aria-hidden="true"
+            aria-labelledby="like"
+            class="card__icon-button">
               <svg xmlns="http://www.w3.org/2000/svg" width="39" height="36" viewBox="0 0 39 36" fill="none"
             class="like-icon">
                 <g class="heart">
@@ -434,6 +456,7 @@
             </button>
             <button
             type="button"
+            id="like"
             class="button card__like-button">
               <span class="button__text">
                 Like
@@ -461,7 +484,9 @@
       </button>
       <dialog class="modal"
       id="dialog-id">
-        <form class="modal__form">
+        <form
+        method="dialog"
+        class="modal__form">
           <div class="modal__content">
             <svg          class="modal__icon"
             width="28"
@@ -469,19 +494,17 @@
             viewBox="0 0 28 28" >
             <use href="./svg/floppy.svg#floppy"/>
             </svg>
-            <p>
-              Вставьте<br>дискету, чтобы<br>продолжить
+            <p class="modal__text">
+              Вставьте дискету, чтобы продолжить
             </p> 
           </div>
           <button
-          class="button modal__button"
-          type="button" 
-          onclick="window['dialog-id'].close()">
+          class="button modal__button">
             <span   class="button__text">
               OK  
             </span>    
           </button>
-        </form>        
+        </form>
       </dialog>     
     </main>    
     <script src="./scripts/set-theme.js"></script>
