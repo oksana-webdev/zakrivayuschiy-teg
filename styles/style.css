@@ -37,7 +37,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  inline-size: var(--content-wdth, 320px);  
+  inline-size: var(--content-wdth, 320px);
   margin-block-end: 100px;
   padding: clamp(120px, 32dvi, 136px) 0 25px;
 
@@ -387,7 +387,7 @@
 }
 
 .modal__content {
-  display: flex;  
+  display: flex;
   align-items: center;
   gap: 20px;
 }
@@ -402,7 +402,7 @@
 }
 
 .modal__button {
-  inline-size: 293px;  
+  inline-size: 293px;
   padding: 9px;
 }
 
