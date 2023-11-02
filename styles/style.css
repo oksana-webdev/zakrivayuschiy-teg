@@ -277,7 +277,7 @@
 }
 
 .card__like-button {
-  inline-size: 126px;
+  inline-size: 130px;
   padding: 7px;
 }
 
@@ -381,8 +381,7 @@
 .modal__form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: center;  
   gap: 30px;
 }
 
@@ -415,6 +414,10 @@
 
   .card__label {
     inset-inline-end: 11px;
+  }
+
+  .modal__form {
+    align-items: center;
   }
 
   .modal__button {
